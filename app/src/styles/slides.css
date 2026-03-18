@@ -1,0 +1,28 @@
+/* Scroll snap container */
+.slide-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Individual slide */
+.slide {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Safe area content wrapper */
+.slide-content {
+  width: 100%;
+  max-width: 1440px;
+  min-width: 0;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
