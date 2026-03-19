@@ -1,155 +1,122 @@
 import { useRef } from 'react'
-import { ConnectionSignal, Growth, Analytics, FavoriteFilled, Collaborate } from '@carbon/icons-react'
+import { Collaborate } from '@carbon/icons-react'
 import SlideLayout from '../common/SlideLayout'
 import useSlideAnimation from '../../hooks/useSlideAnimation'
-
-const flywheelNodes = [
-  { label: '연결', sub: '닥톡예약', pos: 'top', icon: <ConnectionSignal size={20} /> },
-  { label: '유입', sub: '성과 기반 광고', pos: 'right', icon: <Growth size={20} /> },
-  { label: '추적', sub: '실시간 분석', pos: 'bottom', icon: <Analytics size={20} /> },
-  { label: '케어', sub: 'AI 리텐션', pos: 'left', icon: <FavoriteFilled size={20} /> },
-]
 
 export default function Slide17_OutroVision() {
   const ref = useRef(null)
 
-  useSlideAnimation(ref, (gsap, ScrollTrigger) => {
+  useSlideAnimation(ref, (gsap) => {
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ref.current,
-        start: 'top 80%',
-      },
+      scrollTrigger: { trigger: ref.current, start: 'top 80%' },
     })
 
-    tl.from('.s17-label', { opacity: 0, y: 30, duration: 0.5 })
-      .from('.s17-title', { opacity: 0, y: 30, duration: 0.6 }, '-=0.2')
-
-    // Flywheel center
-    tl.from('.s17-center', {
-      opacity: 0,
-      scale: 0,
-      duration: 0.6,
-      ease: 'back.out(1.7)',
-    }, '+=0.2')
-
-    // Nodes pop in with back.out easing
-    const nodes = ref.current.querySelectorAll('.s17-node')
-    nodes.forEach((node, i) => {
-      tl.from(node, {
-        opacity: 0,
-        scale: 0,
-        duration: 0.5,
-        ease: 'back.out(2)',
-      }, '-=0.25')
-    })
-
-    // Ring draws in
-    tl.from('.s17-ring circle', {
-      strokeDashoffset: 880,
-      duration: 1.5,
-      ease: 'power2.inOut',
-    }, '-=0.8')
-
-    // Vision box fades up
-    tl.from('.s17-vision', {
-      opacity: 0,
-      y: 40,
-      duration: 0.7,
-    }, '-=0.5')
-
-    tl.from('.s17-thanks', { opacity: 0, y: 20, duration: 0.5 }, '-=0.2')
+    tl.from('.s17-card', { opacity: 0, y: 30, duration: 1, ease: 'power2.out' })
+      .from('.s17-label', { opacity: 0, y: 15, duration: 0.5 }, '-=0.5')
+      .from('.s17-vision-text', { opacity: 0, y: 15, duration: 0.6 }, '-=0.3')
+      .from('.s17-sub', { opacity: 0, y: 10, duration: 0.5 }, '-=0.2')
+      .from('.s17-thanks', { opacity: 0, duration: 0.6 }, '-=0.1')
   })
 
   return (
-    <SlideLayout id="slide-17" dark ref={ref}>
-      <div style={{ textAlign: 'center' }}>
-        <p className="section-label s17-label">VISION</p>
-        <h2 className="section-title s17-title" style={{ marginBottom: '2.5rem' }}>
-          데이터가 흐르는 병원의 미래
-        </h2>
+    <section
+      id="slide-17"
+      ref={ref}
+      className="slide"
+      style={{
+        position: 'relative', overflow: 'hidden',
+        background: '#f7f6f3',
+      }}
+    >
+      {/* Warm, organic background texture */}
+      <div style={{
+        position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0,
+        background: `
+          radial-gradient(ellipse at 20% 80%, rgba(47, 208, 150, 0.07) 0%, transparent 40%),
+          radial-gradient(ellipse at 80% 20%, rgba(230, 218, 200, 0.3) 0%, transparent 40%),
+          radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.6) 0%, transparent 60%)
+        `,
+      }} />
 
-        {/* Flywheel */}
-        <div className="flywheel" style={{ marginBottom: '2.5rem' }}>
-          {/* SVG Ring */}
-          <svg
-            className="flywheel__ring s17-ring"
-            width="280"
-            height="280"
-            viewBox="0 0 280 280"
-          >
-            <circle
-              cx="140"
-              cy="140"
-              r="130"
-              fill="none"
-              stroke="var(--color-primary)"
-              strokeWidth="2"
-              strokeDasharray="880"
-              strokeDashoffset="0"
-              opacity="0.4"
-            />
-          </svg>
+      {/* Subtle line decoration */}
+      <svg style={{
+        position: 'absolute', bottom: 0, left: 0, width: '100%', height: '40%',
+        pointerEvents: 'none', zIndex: 0, opacity: 0.06,
+      }}>
+        <line x1="0" y1="100%" x2="100%" y2="0" stroke="#2FD096" strokeWidth="1" />
+        <line x1="10%" y1="100%" x2="100%" y2="20%" stroke="#2FD096" strokeWidth="0.5" />
+      </svg>
 
-          {/* Center */}
-          <div className="flywheel__center s17-center">
-            DATA<br />FLYWHEEL
-          </div>
-
-          {/* Nodes */}
-          {flywheelNodes.map((node, i) => (
-            <div
-              key={i}
-              className={`flywheel__node flywheel__node--${node.pos} s17-node`}
-              style={{ color: '#1e293b' }}
-            >
-              <div style={{ color: 'var(--color-primary)', marginBottom: '0.25rem' }}>
-                {node.icon}
-              </div>
-              <p style={{ fontWeight: 800, fontSize: '0.8125rem', lineHeight: 1.2 }}>{node.label}</p>
-              <p style={{ fontSize: '0.625rem', color: '#64748b', marginTop: '0.125rem' }}>{node.sub}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Vision statement box */}
-        <div
-          className="vision-box s17-vision"
-          style={{ maxWidth: '800px', margin: '0 auto 2rem' }}
-        >
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.5rem',
-            marginBottom: '1rem',
+      {/* Content */}
+      <div style={{
+        position: 'relative', zIndex: 10,
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+        width: '100%', height: '100%',
+      }}>
+        <div className="s17-card" style={{
+          background: 'rgba(55, 62, 72, 0.92)',
+          borderRadius: '1.25rem',
+          padding: '3.5rem 5rem',
+          maxWidth: '800px',
+          textAlign: 'center',
+          boxShadow: '0 30px 80px rgba(0,0,0,0.15), 0 10px 30px rgba(0,0,0,0.08)',
+        }}>
+          {/* Label */}
+          <div className="s17-label" style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.625rem',
+            marginBottom: '2rem',
           }}>
-            <Collaborate size={20} style={{ color: 'var(--color-primary)' }} />
-            <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--color-primary)' }}>
-              VISION
+            <Collaborate size={22} style={{ color: 'var(--color-primary)' }} />
+            <p style={{
+              fontSize: '1.375rem', fontWeight: 700, letterSpacing: '0.05em',
+              color: 'var(--color-primary)',
+            }}>
+              닥프렌즈의 비전
             </p>
           </div>
-          <p style={{ fontSize: '1.5rem', fontWeight: 700, lineHeight: 1.6, marginBottom: '1rem' }}>
+
+          {/* Vision text */}
+          <p className="s17-vision-text" style={{
+            fontSize: '1.625rem', fontWeight: 700, color: '#f1f0ed',
+            lineHeight: 1.7, marginBottom: '1.5rem',
+            letterSpacing: '-0.01em',
+          }}>
+            파편화된 의료 인프라를 하나로 이어
+            <br />
             환자와 의사를{' '}
-            <span style={{ color: 'var(--color-primary)', fontWeight: 900 }}>1인 1주치의</span>{' '}
-            관계로 연결
+            <span style={{
+              color: 'var(--color-primary)',
+              borderBottom: '2px solid var(--color-primary)',
+              paddingBottom: '2px',
+            }}>1인 1주치의</span>{' '}
+            관계로 연결하고자 합니다.
           </p>
-          <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
-            닥프렌즈는 데이터와 기술로 의료의 새로운 뉴노멀을 만들어갑니다.
+
+          {/* Divider */}
+          <div style={{
+            width: '48px', height: '2px', background: 'rgba(255,255,255,0.12)',
+            margin: '0 auto 1.5rem',
+          }} />
+
+          {/* Sub text */}
+          <p className="s17-sub" style={{
+            fontSize: '0.9375rem', color: 'rgba(241, 240, 237, 0.5)',
+            lineHeight: 1.8,
+          }}>
+            병원 경영과 환자 케어의 진심을 데이터와 기술로서 연결하는 이 여정에,
+            <br />
+            여러분과 함께 하겠습니다.
           </p>
         </div>
 
         {/* Thank you */}
-        <p
-          className="s17-thanks"
-          style={{
-            fontSize: '1.125rem',
-            color: 'rgba(255,255,255,0.5)',
-            fontWeight: 500,
-          }}
-        >
+        <p className="s17-thanks" style={{
+          fontSize: '0.9375rem', color: '#94918a',
+          fontWeight: 500, marginTop: '2.5rem',
+        }}>
           경청해 주셔서 감사합니다.
         </p>
       </div>
-    </SlideLayout>
+    </section>
   )
 }

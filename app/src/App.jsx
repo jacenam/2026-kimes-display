@@ -4,9 +4,11 @@ import ScrollIndicator from './components/common/ScrollIndicator'
 
 import Slide01_Title from './components/slides/Slide01_Title'
 import Slide02_MarketEnv from './components/slides/Slide02_MarketEnv'
+import Slide02b_AdChannels from './components/slides/Slide02b_AdChannels'
 import Slide03_MarketSize from './components/slides/Slide03_MarketSize'
 import Slide04_AdPainPoint from './components/slides/Slide04_AdPainPoint'
 import Slide05_DataSilo from './components/slides/Slide05_DataSilo'
+import Slide05b_FragmentedBooking from './components/slides/Slide05b_FragmentedBooking'
 import Slide06_DoctalkIntro from './components/slides/Slide06_DoctalkIntro'
 import Slide07_PlatformExpansion from './components/slides/Slide07_PlatformExpansion'
 import Slide08_EmrIntegration from './components/slides/Slide08_EmrIntegration'
@@ -27,15 +29,17 @@ function App() {
   return (
     <div ref={containerRef} className="slide-container">
       <ScrollIndicator
-        totalSlides={17}
+        totalSlides={19}
         activeSlide={activeSlide}
         onDotClick={scrollToSlide}
       />
       <Slide01_Title />
       <Slide02_MarketEnv />
+      <Slide02b_AdChannels />
       <Slide03_MarketSize />
       <Slide04_AdPainPoint />
       <Slide05_DataSilo />
+      <Slide05b_FragmentedBooking />
       <Slide06_DoctalkIntro />
       <Slide07_PlatformExpansion />
       <Slide08_EmrIntegration />
