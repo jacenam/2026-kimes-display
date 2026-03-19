@@ -3,13 +3,13 @@ import SlideLayout from '../common/SlideLayout'
 import useSlideAnimation from '../../hooks/useSlideAnimation'
 
 const PLATFORMS = [
-  { name: '네이버', desc: '검색·플레이스·예약', mau: 'MAU 4,500만', logo: '/images/logos/네이버 로고.png' },
-  { name: '당근', desc: '동네 병원 추천·예약', mau: 'MAU 2,000만', logo: '/images/logos/당근 로고.png' },
-  { name: '카카오', desc: '채널·톡·예약 연동', mau: 'MAU 4,500만', logo: '/images/logos/카카오 로고.png' },
-  { name: '강남언니', desc: '시술·미용 전문 플랫폼', mau: '뷰티·의료 특화', logo: '/images/logos/강남언니 로고.png' },
-  { name: '구글', desc: '검색광고·지도·예약', mau: '글로벌 검색 1위', logo: '/images/logos/구글 로고.png' },
-  { name: '블라인드', desc: '직장인 커뮤니티 연동', mau: 'MAU 1,200만', logo: '/images/logos/블라인드 로고.png', upcoming: true },
-  { name: '키즈노트', desc: '어린이집·학부모 채널', mau: '전국 어린이집 90%+', logo: '/images/logos/키즈노트 로고.png', upcoming: true },
+  { name: '네이버', desc: '검색·플레이스·예약', mau: 'MAU 4,500만', logo: `${import.meta.env.BASE_URL}images/logos/네이버 로고.png` },
+  { name: '당근', desc: '동네 병원 추천·예약', mau: 'MAU 2,000만', logo: `${import.meta.env.BASE_URL}images/logos/당근 로고.png` },
+  { name: '카카오', desc: '채널·톡·예약 연동', mau: 'MAU 4,500만', logo: `${import.meta.env.BASE_URL}images/logos/카카오 로고.png` },
+  { name: '강남언니', desc: '시술·미용 전문 플랫폼', mau: '뷰티·의료 특화', logo: `${import.meta.env.BASE_URL}images/logos/강남언니 로고.png` },
+  { name: '구글', desc: '검색광고·지도·예약', mau: '글로벌 검색 1위', logo: `${import.meta.env.BASE_URL}images/logos/구글 로고.png` },
+  { name: '블라인드', desc: '직장인 커뮤니티 연동', mau: 'MAU 1,200만', logo: `${import.meta.env.BASE_URL}images/logos/블라인드 로고.png`, upcoming: true },
+  { name: '키즈노트', desc: '어린이집·학부모 채널', mau: '전국 어린이집 90%+', logo: `${import.meta.env.BASE_URL}images/logos/키즈노트 로고.png`, upcoming: true },
 ]
 
 export default function Slide07_PlatformExpansion() {

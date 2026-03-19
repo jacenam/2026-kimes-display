@@ -38,7 +38,7 @@ export default function Slide05_DataSilo() {
         {/* 3D Data Silo Image */}
         <div className="s05-image" style={{ marginBottom: '2rem', maxWidth: '800px', width: '100%' }}>
           <img
-            src="/images/data-silo.png"
+            src={`${import.meta.env.BASE_URL}images/data-silo.png`}
             alt="플랫폼 광고 데이터와 병원 EMR 데이터 간의 단절"
             style={{
               width: '100%', height: 'auto',

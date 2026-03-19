@@ -4,17 +4,17 @@ import useSlideAnimation from '../../hooks/useSlideAnimation'
 
 const UI_SCREENS = [
   {
-    src: '/images/doctalk-reservation-status.png',
+    src: `${import.meta.env.BASE_URL}images/doctalk-reservation-status.png`,
     label: '예약현황',
     desc: '네이버·카카오·당근 예약을 한 화면에서 확인·관리',
   },
   {
-    src: '/images/doctalk-reservation-products.png',
+    src: `${import.meta.env.BASE_URL}images/doctalk-reservation-products.png`,
     label: '예약상품',
     desc: '시술별 예약 상품을 등록하고 노출 여부를 제어',
   },
   {
-    src: '/images/doctalk-sameday-reservation.png',
+    src: `${import.meta.env.BASE_URL}images/doctalk-sameday-reservation.png`,
     label: '당일예약',
     desc: '플랫폼별 당일예약 수신 설정을 한 곳에서 관리',
   },
@@ -102,7 +102,7 @@ export default function Slide08b_UnifiedManagement() {
         marginBottom: '2rem',
       }}>
         <img
-          src="/images/doctalk-slot-sync.png"
+          src={`${import.meta.env.BASE_URL}images/doctalk-slot-sync.png`}
           alt="예약 가능 인원 수(슬롯) 동기화"
           style={{
             width: '100%', height: 'auto', display: 'block',

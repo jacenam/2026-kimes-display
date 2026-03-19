@@ -9,12 +9,12 @@ const OFFLINE = [
 ]
 
 const ONLINE = [
-  { logo: '/images/logos/네이버 로고.png', label: '네이버', desc: '검색광고, 플레이스, 블로그' },
-  { logo: '/images/logos/카카오 로고.png', label: '카카오', desc: '채널, 비즈보드 광고' },
-  { logo: '/images/logos/당근 로고.png', label: '당근', desc: '동네 병원 광고' },
-  { logo: '/images/logos/강남언니 로고.png', label: '강남언니', desc: '시술/미용 전문 플랫폼' },
-  { logo: '/images/logos/인스타그램 로고.png', label: '인스타그램', desc: '피드·릴스·숏폼 광고' },
-  { logo: '/images/logos/유튜브 로고.png', label: '유튜브', desc: '영상·숏츠 광고' },
+  { logo: `${import.meta.env.BASE_URL}images/logos/네이버 로고.png`, label: '네이버', desc: '검색광고, 플레이스, 블로그' },
+  { logo: `${import.meta.env.BASE_URL}images/logos/카카오 로고.png`, label: '카카오', desc: '채널, 비즈보드 광고' },
+  { logo: `${import.meta.env.BASE_URL}images/logos/당근 로고.png`, label: '당근', desc: '동네 병원 광고' },
+  { logo: `${import.meta.env.BASE_URL}images/logos/강남언니 로고.png`, label: '강남언니', desc: '시술/미용 전문 플랫폼' },
+  { logo: `${import.meta.env.BASE_URL}images/logos/인스타그램 로고.png`, label: '인스타그램', desc: '피드·릴스·숏폼 광고' },
+  { logo: `${import.meta.env.BASE_URL}images/logos/유튜브 로고.png`, label: '유튜브', desc: '영상·숏츠 광고' },
 ]
 
 export default function Slide02b_AdChannels() {
