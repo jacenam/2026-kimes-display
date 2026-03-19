@@ -35,7 +35,7 @@ export default function Slide08b_UnifiedManagement() {
 
   return (
     <SlideLayout id="slide-08b" ref={ref}>
-      <div className="s08b-header" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+      <div className="s08b-header" style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
         <p className="section-label">UNIFIED MANAGEMENT</p>
         <h2 className="section-title">환자 접점 채널의 다양화, 그러나 관리포인트는 일원화</h2>
         <p className="section-subtitle">
