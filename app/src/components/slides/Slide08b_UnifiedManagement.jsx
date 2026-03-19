@@ -30,7 +30,6 @@ export default function Slide08b_UnifiedManagement() {
 
     tl.from('.s08b-header', { opacity: 0, y: 30, duration: 0.6 })
       .from('.s08b-card', { opacity: 0, y: 40, stagger: 0.15, duration: 0.7, ease: 'power2.out' }, '-=0.2')
-      .from('.s08b-hero', { opacity: 0, y: 30, duration: 0.8, ease: 'power2.out' }, '-=0.2')
   })
 
   return (
@@ -91,23 +90,6 @@ export default function Slide08b_UnifiedManagement() {
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Hero: Slot Sync */}
-      <div className="s08b-hero" style={{
-        borderRadius: '1rem', overflow: 'hidden',
-        border: '2px solid var(--color-primary)',
-        background: 'white',
-        boxShadow: '0 8px 32px rgba(47, 208, 150, 0.15)',
-        marginBottom: '2rem',
-      }}>
-        <img
-          src={`${import.meta.env.BASE_URL}images/doctalk-slot-sync.png`}
-          alt="예약 가능 인원 수(슬롯) 동기화"
-          style={{
-            width: '100%', height: 'auto', display: 'block',
-          }}
-        />
       </div>
 
 

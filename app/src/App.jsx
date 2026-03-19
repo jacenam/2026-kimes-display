@@ -12,6 +12,7 @@ import Slide06_DoctalkIntro from './components/slides/Slide06_DoctalkIntro'
 import Slide07_PlatformExpansion from './components/slides/Slide07_PlatformExpansion'
 import Slide08_EmrIntegration from './components/slides/Slide08_EmrIntegration'
 import Slide08b_UnifiedManagement from './components/slides/Slide08b_UnifiedManagement'
+import Slide08c_SlotSync from './components/slides/Slide08c_SlotSync'
 import Slide09_DoctalkResults from './components/slides/Slide09_DoctalkResults'
 import Slide10_TrackingOverview from './components/slides/Slide10_TrackingOverview'
 import Slide11_EmrTracking from './components/slides/Slide11_EmrTracking'
@@ -28,12 +29,12 @@ import Slide17_OutroVision from './components/slides/Slide17_OutroVision'
 
 function App() {
   const containerRef = useRef(null)
-  const { activeSlide, scrollToSlide } = useScrollSnap(containerRef, 23)
+  const { activeSlide, scrollToSlide } = useScrollSnap(containerRef, 24)
 
   return (
     <div ref={containerRef} className="slide-container">
       <ScrollIndicator
-        totalSlides={23}
+        totalSlides={24}
         activeSlide={activeSlide}
         onDotClick={scrollToSlide}
       />
@@ -46,6 +47,7 @@ function App() {
       <Slide06_DoctalkIntro />
       <Slide07_PlatformExpansion />
       <Slide08b_UnifiedManagement />
+      <Slide08c_SlotSync />
       <Slide08_EmrIntegration />
       <Slide09_DoctalkResults />
       <Slide10_TrackingOverview />
