@@ -16,7 +16,7 @@ export default function Slide08c_SlotSync() {
 
   return (
     <SlideLayout id="slide-08c" ref={ref}>
-      <div className="s08c-header" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+      <div className="s08c-header" style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
         <p className="section-label">SLOT SYNC</p>
         <h2 className="section-title">
           예약 가능 인원 수(슬롯) 동기화

@@ -14,8 +14,9 @@ import Slide08_EmrIntegration from './components/slides/Slide08_EmrIntegration'
 import Slide08b_UnifiedManagement from './components/slides/Slide08b_UnifiedManagement'
 import Slide08c_SlotSync from './components/slides/Slide08c_SlotSync'
 import Slide09_DoctalkResults from './components/slides/Slide09_DoctalkResults'
-import Slide10_TrackingOverview from './components/slides/Slide10_TrackingOverview'
-import Slide11_EmrTracking from './components/slides/Slide11_EmrTracking'
+import Slide10b_TrackingOverviewAlt from './components/slides/Slide10b_TrackingOverviewAlt'
+import Slide10c_FullFunnel from './components/slides/Slide10c_FullFunnel'
+import Slide11_DataConvergence from './components/slides/Slide11_DataConvergence'
 import Slide11b_BookingDataFlow from './components/slides/Slide11b_BookingDataFlow'
 import Slide12_DataInsights from './components/slides/Slide12_DataInsights'
 import Slide13_AdReviewProblem from './components/slides/Slide13_AdReviewProblem'
@@ -29,12 +30,12 @@ import Slide17_OutroVision from './components/slides/Slide17_OutroVision'
 
 function App() {
   const containerRef = useRef(null)
-  const { activeSlide, scrollToSlide } = useScrollSnap(containerRef, 24)
+  const { activeSlide, scrollToSlide } = useScrollSnap(containerRef, 25)
 
   return (
     <div ref={containerRef} className="slide-container">
       <ScrollIndicator
-        totalSlides={24}
+        totalSlides={25}
         activeSlide={activeSlide}
         onDotClick={scrollToSlide}
       />
@@ -50,8 +51,9 @@ function App() {
       <Slide08c_SlotSync />
       <Slide08_EmrIntegration />
       <Slide09_DoctalkResults />
-      <Slide10_TrackingOverview />
-      <Slide11_EmrTracking />
+      <Slide10b_TrackingOverviewAlt />
+      <Slide10c_FullFunnel />
+      <Slide11_DataConvergence />
       <Slide11b_BookingDataFlow />
       <Slide12_DataInsights />
       <Slide13_AdReviewProblem />
