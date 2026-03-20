@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 
-const AUTO_INTERVAL = 4000    // 4초마다 자동 넘김
+const AUTO_INTERVAL = 7000    // 7초마다 자동 넘김
 const IDLE_TIMEOUT = 15000    // 마우스 15초 무활동 시 자동 재개
 
 export default function useScrollSnap(containerRef, totalSlides = 19) {
