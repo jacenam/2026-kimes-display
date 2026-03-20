@@ -93,7 +93,7 @@ export default function Slide14b_KmaPartnership() {
           flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
           <video
-            src={`${BASE}videos/ad-review-demo.mov`}
+            src={`${BASE}videos/ad-review-demo.mp4`}
             autoPlay
             loop
             muted

@@ -63,7 +63,7 @@ export default function Slide10c_FullFunnel() {
         .s10c-doctalk-card::before {
           content: '';
           position: absolute;
-          inset: -3px;
+          top: -3px; right: -3px; bottom: -3px; left: -3px;
           border-radius: 1.1rem;
           border: 2px solid var(--color-primary);
           animation: doctalkRing 1s ease-in-out infinite;

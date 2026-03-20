@@ -53,7 +53,7 @@ export default function Slide01_Title() {
           color: 'var(--color-primary)',
           marginBottom: '1.25rem',
         }}>
-          KIMES 2026 SEMINAR
+          2026 KIMES SEMINAR
         </p>
 
         <h1 className="s01-title" style={{

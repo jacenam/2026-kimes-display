@@ -3,6 +3,7 @@
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
@@ -95,7 +96,7 @@
   line-height: 1.25;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
-  text-wrap: balance;
+  text-wrap: balance; /* Chrome 114+, graceful fallback */
   word-break: keep-all;
 }
 
@@ -103,7 +104,7 @@
   font-size: 1.25rem;
   font-weight: 500;
   color: #64748b;
-  text-wrap: pretty;
+  text-wrap: pretty; /* Chrome 117+, graceful fallback */
   word-break: keep-all;
   line-height: 1.6;
   margin-bottom: 2.5rem;
