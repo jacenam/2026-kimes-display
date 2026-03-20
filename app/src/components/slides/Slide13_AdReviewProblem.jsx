@@ -81,21 +81,21 @@ export default function Slide13_AdReviewProblem() {
             의료광고 심의의 벽
           </h2>
           <p style={{
-            fontSize: '1rem', color: '#64748b', lineHeight: 1.7, marginBottom: '2rem',
+            fontSize: '1rem', color: '#64748b', lineHeight: 1.7, marginBottom: '3.5rem',
             whiteSpace: 'nowrap',
           }}>
             최적의 광고 전략을 세웠어도, 실행 단계에서 마주치는 행정적 병목
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             {[
               { value: '3주~3개월', label: '평균 심의 소요' },
               { value: '45,000+', label: '연간 심의 건수' },
               { value: '100%', label: '수기 검토' },
             ].map((s) => (
               <div key={s.label}>
-                <p style={{ fontSize: 'clamp(1.5rem, 2.5vh, 2.25rem)', fontWeight: 900, color: '#e11d48', lineHeight: 1 }}>{s.value}</p>
-                <p style={{ fontSize: 'clamp(0.75rem, 1.2vh, 1.125rem)', color: '#9f1239', marginTop: '0.125rem' }}>{s.label}</p>
+                <p style={{ fontSize: 'clamp(1.5rem, 2.5vh, 2.25rem)', fontWeight: 700, color: '#e11d48', lineHeight: 1 }}>{s.value}</p>
+                <p style={{ fontSize: 'clamp(0.75rem, 1.2vh, 1.125rem)', color: '#9f1239', marginTop: '1rem' }}>{s.label}</p>
               </div>
             ))}
           </div>

@@ -18,6 +18,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Base 16px at 1440px viewport → scales proportionally */
+  font-size: clamp(14px, 1.111vw, 19px);
+}
+
 html, body, #root {
   font-family: var(--font-family);
   overflow: hidden;

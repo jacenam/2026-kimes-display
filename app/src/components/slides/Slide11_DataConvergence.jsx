@@ -82,10 +82,20 @@ export default function Slide11_DataConvergence() {
       setTimeout(measureAndBuild, ms)
     )
 
-    const handleResize = () => measureAndBuild()
+    const handleResize = () => {
+      // Debounce with rAF for smooth updates
+      requestAnimationFrame(measureAndBuild)
+    }
     window.addEventListener('resize', handleResize)
 
-    // Also re-measure when scroll container scrolls (slide becomes visible)
+    // ResizeObserver catches layout shifts from font-size changes
+    let ro
+    if (sectionRef.current) {
+      ro = new ResizeObserver(handleResize)
+      ro.observe(sectionRef.current)
+    }
+
+    // Re-measure on scroll (slide becomes visible)
     const scrollContainer = sectionRef.current?.closest('.slide-container')
     if (scrollContainer) {
       scrollContainer.addEventListener('scroll', handleResize)
@@ -94,6 +104,7 @@ export default function Slide11_DataConvergence() {
     return () => {
       timers.forEach(clearTimeout)
       window.removeEventListener('resize', handleResize)
+      if (ro) ro.disconnect()
       if (scrollContainer) {
         scrollContainer.removeEventListener('scroll', handleResize)
       }
