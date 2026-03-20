@@ -14,8 +14,6 @@ export default function Slide17_OutroVision() {
     tl.from('.s17-card', { opacity: 0, y: 30, duration: 1, ease: 'power2.out' })
       .from('.s17-label', { opacity: 0, y: 15, duration: 0.5 }, '-=0.5')
       .from('.s17-vision-text', { opacity: 0, y: 15, duration: 0.6 }, '-=0.3')
-      .from('.s17-sub', { opacity: 0, y: 10, duration: 0.5 }, '-=0.2')
-      .from('.s17-thanks', { opacity: 0, duration: 0.6 }, '-=0.1')
   })
 
   return (
@@ -79,7 +77,7 @@ export default function Slide17_OutroVision() {
           <p className="s17-vision-text" style={{
             fontSize: '1.625rem', fontWeight: 700, color: '#f1f0ed',
             lineHeight: 1.7, marginBottom: '1.5rem',
-            letterSpacing: '-0.01em',
+            letterSpacing: '-0.01em', whiteSpace: 'nowrap',
           }}>
             파편화된 의료 인프라를 하나로 이어
             <br />
@@ -98,24 +96,7 @@ export default function Slide17_OutroVision() {
             margin: '0 auto 1.5rem',
           }} />
 
-          {/* Sub text */}
-          <p className="s17-sub" style={{
-            fontSize: '0.9375rem', color: 'rgba(241, 240, 237, 0.5)',
-            lineHeight: 1.8,
-          }}>
-            병원 경영과 환자 케어의 진심을 데이터와 기술로서 연결하는 이 여정에,
-            <br />
-            여러분과 함께 하겠습니다.
-          </p>
         </div>
-
-        {/* Thank you */}
-        <p className="s17-thanks" style={{
-          fontSize: '0.9375rem', color: '#94918a',
-          fontWeight: 500, marginTop: '2.5rem',
-        }}>
-          경청해 주셔서 감사합니다.
-        </p>
       </div>
     </section>
   )

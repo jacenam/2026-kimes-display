@@ -83,11 +83,7 @@ export default function Slide01_Title() {
         padding: '0 4rem',
       }}>
         <div>
-          <p style={{ fontWeight: 800, fontSize: '1.0625rem', color: 'var(--color-primary)', marginBottom: '0.5rem' }}>Docfriends</p>
-          <p style={{ fontSize: '0.9375rem', color: '#1a1a1a' }}>
-            <span style={{ fontWeight: 700 }}>남주형</span>
-            <span style={{ fontWeight: 700, marginLeft: '0.75rem' }}>비지니스·프로덕트 총괄</span>
-          </p>
+          <p style={{ fontWeight: 800, fontSize: '1.75rem', color: 'var(--color-primary)' }}>Docfriends</p>
         </div>
       </div>
     </section>
